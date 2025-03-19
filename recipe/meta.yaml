@@ -20,7 +20,7 @@ source:
   sha256: 38405e49b0956972e7f3c4a6cd3a06ab3c0547a7bd73ce55510346e4a1063daf  # [win]
 
 build:
-  number: 0
+  number: 1
   binary_relocation: false
   skip: true  # [osx or aarch64 or ppc64le]
   missing_dso_whitelist:
@@ -36,6 +36,7 @@ requirements:
     - {{ compiler("cxx") }}
     - {{ stdlib("c") }}
     - patchelf <0.18.0  # [linux]
+    - cf-nvidia-tools 1  # [linux]
   host:
     - cuda-version {{ cuda_version }}
     - cuda-cupti
